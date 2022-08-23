@@ -18,17 +18,13 @@ export default {
   css: [
     '@/assets/scss/main.scss',
   ],
-  plugins: [
-    { src: '@plugins/main.js' },
-    { src: '@plugins/vee-validate.js' },
-    { src: '@plugins/injectComponents.js' },
-  ],
   components: true,
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     '@nuxtjs/dotenv',
     '@nuxtjs/color-mode',
+    '@nuxt/typescript-build',
   ],
   styleResources: {
     scss: ['./assets/scss/resourses.scss'],
