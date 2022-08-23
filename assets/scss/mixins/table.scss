@@ -1,0 +1,35 @@
+@mixin bTable {
+  .table::v-deep,
+  .b-table-sticky-header::v-deep {
+    thead > tr th,
+    tbody > tr td {
+      border: none;
+    }
+
+    thead > tr th {
+      font-weight: 350;
+      font-size: 12px;
+      line-height: 130%;
+      letter-spacing: 0.03em;
+      color: $table-th;
+      padding: 15px 20px;
+      vertical-align: middle;
+    }
+
+    tbody > tr td {
+      font-weight: 350;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: 0.0168em;
+      color: $text;
+      padding: 25px 20px;
+      vertical-align: middle;
+    }
+
+    tbody > tr {
+      &:not(:last-child) {
+        border-bottom: 1px solid $table-border;
+      }
+    }
+  }
+}

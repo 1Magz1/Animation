@@ -1,0 +1,191 @@
+<template>
+  <div class="home pt-5">
+    <div class="home__wrap">
+      <h1 class="home__title">
+        Анимация с помощью CSS
+      </h1>
+      <div class="home__part">
+        <pre>
+<code>.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: transform 0.3s, color 0.3s;
+  &:hover {
+    transform: scale(1.2, 0.8);
+    background-color: #000;
+  }
+}</code>
+</pre>
+        <div class="circle" />
+      </div>
+      <div class="home__part">
+        <pre>
+<code>.square {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    opacity: 0.5;
+    background-position: 100% 50%;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+    background-position: 0% 50%;
+  }
+}</code>
+</pre>
+        <div class="square" />
+      </div>
+      <div class="home__part">
+        <pre>
+<code>.svg {
+  height: 140px;
+  width: 200px;
+  path {
+    stroke-dasharray: 210;
+    stroke-dashoffset: 0;
+    animation: dash 10s infinite;
+  }
+  g {
+    fill-opacity: 0;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -210;
+  }
+}</code>
+</pre>
+        <div class="svg">
+          <svg viewBox="0 -1 54 60">
+            <g
+              stroke="#000"
+              fill="#000"
+              fill-rule="nonzero"
+            >
+              <path
+                d="M36.499 28.979c-3.301 0-6.07 2.301-6.803 5.381-.62-.241-1.365-.381-2.197-.381-.832 0-1.577.14-2.197.381-.734-3.08-3.502-5.381-6.803-5.381-3.859 0-7 3.141-7 7s3.141 7 7 7c3.634 0 6.628-2.785 6.966-6.332.003-.03.017-.055.017-.085.096-.171.813-.583 2.017-.583s1.921.412 2 .5c0 .06.024.111.034.167.338 3.547 3.332 6.333 6.966 6.333 3.859 0 7-3.141 7-7s-3.141-7-7-7zm-18 12c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5zm18 0c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z"
+              />
+              <path
+                d="M53.27 18.843c-.563-4.081-2.322-7.604-4.825-9.668-.644-.531-1.116-1.365-1.402-2.479-.827-3.209-3.847-5.451-7.694-5.714-2.143-.146-3.997.518-6.028 1.331-.07.029-.154.028-.277-.05-.416-1.106-1.36-1.867-2.658-2.143-3.017-.637-7.636 1.311-11.353 4.692.006-.891.191-1.687.695-1.938l1.686-.842-1.644-.924c-1.737-.978-5.926-2.038-9.334.944-1.238 1.082-2.138 2.596-2.599 4.377-.095.364-.191.755-.277 1.139a.299.299 0 01-.231.23c-.109.026-.197-.002-.298-.121a2.365 2.365 0 00-2.17-.857A2.268 2.268 0 003.08 8.181c-1.968 4.567-5.65 16.19 2.2 26.139v16.658c0 2.757 2.243 5 5 5h3v1.694a2.308 2.308 0 002.305 2.306h23.39a2.309 2.309 0 002.306-2.306v-1.694h3c2.757 0 5-2.243 5-5V34.374c1.171-1.319 5.223-6.611 3.989-15.531zM4.916 8.973c.017-.038.065-.151.224-.172a.358.358 0 01.328.124l.064.078c.554.66 1.423.942 2.269.74a2.295 2.295 0 001.711-1.735c.082-.362.173-.731.262-1.076.36-1.39 1.045-2.557 1.979-3.373 2.098-1.835 4.416-1.597 5.801-1.195-.5.948-.648 2.279-.419 3.91.074.539.441.98.958 1.151.52.174 1.09.037 1.479-.357 3.806-3.865 8.202-5.457 10.398-4.99.941.199 1.138.72 1.202.891a2.08 2.08 0 001.122 1.173 2.3 2.3 0 001.77.029c1.864-.747 3.429-1.313 5.148-1.192 2.366.161 5.156 1.353 5.894 4.216.395 1.533 1.09 2.719 2.067 3.524 1.003.827 3.412 3.301 4.117 8.398.768 5.555-.699 9.517-2.01 11.811V17.232l-1.507.885c-2.458 1.445-4.604 1.887-6.386 1.314a4.697 4.697 0 01-.774-.327c-1.672-.884-2.409-2.508-2.417-2.527l-.001-.001-.217-.502-.546-.084c-9.598-1.48-14.263 2.536-15.57 3.94-6.965-.755-9.986-2.757-10.013-2.774l-.74-.513-.587.683a11.19 11.19 0 01-4.588 3.188l-.654.243v10.065C.378 22.634 2.843 13.785 4.916 8.973zM39.28 57.674a.306.306 0 01-.306.306h-23.39a.306.306 0 01-.305-.306V55.98h24v1.694h.001zm8-6.695c0 1.654-1.346 3-3 3h-34c-1.654 0-3-1.346-3-3V22.13a13.196 13.196 0 004.196-2.885c1.407.73 4.807 2.158 10.707 2.729l.565.055.337-.457c.038-.052 3.805-4.994 13.546-3.676.516.89 1.797 2.672 4.112 3.429 1.952.638 4.145.403 6.536-.694v30.348h.001z"
+              />
+              <path
+                d="M30.499 24.979h3l-1.8 2.4a.998.998 0 00.799 1.599.998.998 0 00.801-.4l3-4a.999.999 0 00-.8-1.6h-3l1.8-2.4a.998.998 0 10-1.599-1.199l-3 4a.999.999 0 00.799 1.6zM34.499 46.979h-14a1 1 0 100 2h14a1 1 0 100-2z"
+              />
+            </g>
+          </svg>
+          <div />
+        </div>
+        <Arrow
+          page="vue"
+          class="home__arrow"
+        />
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+import Arrow from '@/components/arrow';
+
+export default {
+  name: 'Home',
+  components: {
+    Arrow,
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.home {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 200% 100%;
+  &__part {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+  }
+  &__title {
+    text-align: center;
+    color: #fff;
+  }
+  &__arrow {
+    position: fixed;
+    top: 50%;
+    right: 100px;
+  }
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: transform 0.3s, color 0.3s;
+  &:hover {
+    transform: scale(1.2, 0.8);
+    background-color: #000;
+  }
+  &:active {
+    opacity: 0.5;
+  }
+}
+.square {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+.svg {
+  height: 140px;
+  width: 200px;
+  path {
+    stroke-dasharray: 210;
+    stroke-dashoffset: 210;
+    animation: dash 10s infinite;
+  }
+  g {
+    fill-opacity: 0;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    opacity: 0.5;
+    background-position: 100% 50%;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+    background-position: 0% 50%;
+  }
+}
+</style>

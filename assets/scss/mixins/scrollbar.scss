@@ -1,0 +1,29 @@
+@mixin base-scrollbar {
+  //стили для mozila
+  scrollbar-color: $scrollbar; /* «цвет ползунка» «цвет полосы скроллбара» */
+  scrollbar-width: 5px;
+  // стили для webkit браузеров
+  &::-webkit-scrollbar {
+    width: 5px; /* ширина для вертикального скролла */
+    height: 5px; /* высота для горизонтального скролла */
+  }
+  /* ползунок скроллбара */
+  &::-webkit-scrollbar-thumb {
+    background-color: $scrollbar;
+  }
+}
+
+@mixin primary-scrollbar {
+  //стили для mozila
+  scrollbar-color: $scrollbar; /* «цвет ползунка» «цвет полосы скроллбара» */
+  scrollbar-width: 15px;
+  // стили для webkit браузеров
+  &::-webkit-scrollbar {
+    width: 15px; /* ширина для вертикального скролла */
+    height: 5px; /* высота для горизонтального скролла */
+  }
+  /* ползунок скроллбара */
+  &::-webkit-scrollbar-thumb {
+    background-color: $scrollbar;
+  }
+}

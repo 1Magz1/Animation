@@ -1,0 +1,92 @@
+@import './_reset.css';
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.b-toaster {
+  z-index: 3000;
+}
+// Transition animation
+.page-enter-active,
+.page-leave-active {
+  transition-duration: 1600ms;
+
+  &::before,
+  &::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    height: 50%;
+    transition-property: opacity, transform;
+    transition-timing-function: ease-in-out;
+  }
+
+  &::before {
+    background-color: #2e2e2e;
+  }
+
+  &::after {
+    top: 50%;
+    background-color: #2e2e2e;
+  }
+}
+
+.page-leave {
+  &::before,
+  &::after {
+    transform: scaleX(0);
+  }
+}
+
+.page-leave-active {
+  &::before {
+    transition-duration: 800ms;
+  }
+
+  &::after {
+    transition-duration: 500ms;
+    transition-delay: 300ms;
+  }
+}
+
+.page-leave-to {
+  &::before,
+  &::after {
+    transform: scale(1);
+    transform-origin: left;
+  }
+}
+
+.page-enter {
+  &::before,
+  &::after {
+    transform: scaleX(1);
+  }
+}
+
+.page-enter-active {
+  &::before {
+    transition-duration: 800ms;
+  }
+
+  &::after {
+    transition-duration: 500ms;
+    transition-delay: 300ms;
+  }
+}
+
+.page-enter-to {
+  &::before,
+  &::after {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}

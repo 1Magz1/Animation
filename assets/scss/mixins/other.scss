@@ -1,0 +1,10 @@
+@mixin title {
+  font-weight: 750;
+  font-size: 34px;
+  line-height: 130%;
+  color: $text;
+  @include _767 {
+    font-size: 26px;
+  }
+}
+
